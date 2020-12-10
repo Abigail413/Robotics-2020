@@ -16,10 +16,10 @@ package frc.robot;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
+    public static final int kControllerPort = 0;
+
     public static final int kLFrontWheel = 0;
     public static final int kRFrontWheel = 1;
     public static final int kLBackWheel = 2;
     public static final int kRBackWheel = 3;
-
-
 }

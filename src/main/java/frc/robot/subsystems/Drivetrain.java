@@ -11,17 +11,19 @@ import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import frc.robot.Constants;
+
+import static frc.robot.Constants.*;
 
 public class Drivetrain extends SubsystemBase {
   /**
    * Creates a new Drivetrain.
    */
-  private CANSparkMax LFrontWheel = new CANSparkMax(Constants.kLFrontWheel, MotorType.kBrushless);
-  private CANSparkMax RFrontWheel = new CANSparkMax(Constants.kRFrontWheel, MotorType.kBrushless);
-  private CANSparkMax LBackWheel = new CANSparkMax(Constants.kLBackWheel, MotorType.kBrushless);
-  private CANSparkMax RBackWheel = new CANSparkMax(Constants.kRBackWheel, MotorType.kBrushless);
+  private CANSparkMax LFrontWheel = new CANSparkMax(kLFrontWheel, MotorType.kBrushless);
+  private CANSparkMax RFrontWheel = new CANSparkMax(kRFrontWheel, MotorType.kBrushless);
+  private CANSparkMax LBackWheel = new CANSparkMax(kLBackWheel, MotorType.kBrushless);
+  private CANSparkMax RBackWheel = new CANSparkMax(kRBackWheel, MotorType.kBrushless);
 
   private DifferentialDrive roboDrive = new DifferentialDrive(LFrontWheel, RFrontWheel);
 
