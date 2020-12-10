@@ -20,10 +20,10 @@ public class Drivetrain extends SubsystemBase {
   /**
    * Creates a new Drivetrain.
    */
-  private CANSparkMax LFrontWheel = new CANSparkMax(kLFrontWheel, MotorType.kBrushless);
-  private CANSparkMax RFrontWheel = new CANSparkMax(kRFrontWheel, MotorType.kBrushless);
-  private CANSparkMax LBackWheel = new CANSparkMax(kLBackWheel, MotorType.kBrushless);
-  private CANSparkMax RBackWheel = new CANSparkMax(kRBackWheel, MotorType.kBrushless);
+  private CANSparkMax LFrontWheel = new CANSparkMax(kLFrontWheelPort, MotorType.kBrushless);
+  private CANSparkMax RFrontWheel = new CANSparkMax(kRFrontWheelPort, MotorType.kBrushless);
+  private CANSparkMax LBackWheel = new CANSparkMax(kLBackWheelPort, MotorType.kBrushless);
+  private CANSparkMax RBackWheel = new CANSparkMax(kRBackWheelPort, MotorType.kBrushless);
 
   private DifferentialDrive roboDrive = new DifferentialDrive(LFrontWheel, RFrontWheel);
 
