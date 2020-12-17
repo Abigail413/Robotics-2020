@@ -11,11 +11,14 @@ import edu.wpi.first.wpilibj.GenericHID;
 
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.XboxController.Axis;
+import edu.wpi.first.wpilibj.XboxController.Button;
 
 import frc.robot.subsystems.Drivetrain;
-
+import frc.robot.subsystems.Flag;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.RunCommand;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
 
 /**
@@ -30,6 +33,8 @@ public class RobotContainer {
 
   private final Drivetrain drivetrain = new Drivetrain();
 
+  private final Flag flag = new Flag();
+
   private Command manualDrive = new RunCommand(
     () -> drivetrain.getDifferentialDrive().tankDrive(
       xbox.getRawAxis(Axis.kLeftY.value),
@@ -38,6 +43,8 @@ public class RobotContainer {
     ),
     drivetrain
   );
+
+
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
    */
@@ -55,7 +62,8 @@ public class RobotContainer {
    * {@link edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-
+    new JoystickButton(xbox, Button.kY.value)
+    .whenPressed(new InstantCommand(() -> flag.flagSwitch(), flag));
   }
 
 
